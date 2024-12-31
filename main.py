@@ -1,4 +1,6 @@
 import numpy as np
+from operationclass import IntArray 
+#first 'from nameoffile' then 'import nameofclass'
 
 def file_handling():
     lines = []
@@ -9,13 +11,19 @@ def file_handling():
             int_values = [int(val)for val in values]
             lines.append(int_values)
 
-        data_frame = np.array([np.array(row) for row in lines], dtype = object)
+        data_frame = np.array([np.array(row) for row in lines], dtype = int)
 
         return data_frame
 def main():
     data_frame = file_handling()
 
     print(data_frame)
+    print(type(data_frame))
+
+
+    first_branch = IntArray(data_frame[0])
+    first_branch.display()
+    first_branch.salary()
 
 main()
 
