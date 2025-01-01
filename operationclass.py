@@ -4,7 +4,11 @@ import matplotlib.pyplot as plt
 #This will have some useful methods.
 #This will use to display the data to some operations and plot our data or create new file name
 
-
+def productivity_of_company(order,data_frame):
+    """
+    num_products = 0
+    for element in data_frame[]
+    """
 class IntArray:
     def __init__(self,int_array):
         if not isinstance(int_array,np.ndarray) or int_array.dtype != int:
@@ -25,5 +29,9 @@ class IntArray:
     def show_data(self):
         x =np.arange(len(self.int_array))
         plt.plot(x,self.int_array,marker='o')
+        plt.title("Productivity of Employee")
+        plt.xlabel('Rank of employee')
+        plt.ylabel('Products/month')
+        # plt.xticks()
         plt.grid()
         plt.show()
