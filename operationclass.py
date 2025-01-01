@@ -5,10 +5,42 @@ import matplotlib.pyplot as plt
 #This will use to display the data to some operations and plot our data or create new file name
 
 def productivity_of_company(order,data_frame):
-    """
+    
     num_products = 0
-    for element in data_frame[]
-    """
+    for element in data_frame[order]:
+        num_products += element
+
+    return num_products
+    
+def max_productivity(data_frame):
+    i = 0
+    best_company = i + 1
+
+    num_of_products = 0
+     
+    for i in range (len(data_frame)):
+        result = productivity_of_company(i,data_frame)
+
+        if result>num_of_products:
+            num_of_products = result
+            best_company = i +1
+
+    print(f"The best company is the {best_company}. company with {num_of_products}")
+
+
+def min_productivity(data_frame):
+    i = 0
+    worst_company = i +1
+    num_of_products = productivity_of_company(0,data_frame)
+
+    for i in range(len(data_frame)):
+        result = productivity_of_company(i,data_frame)
+        if result <= num_of_products:
+            num_of_products = result
+            worst_company = i+1
+
+    print(f"The worst company is the {worst_company}. company with {num_of_products} products made.")
+
 class IntArray:
     def __init__(self,int_array):
         if not isinstance(int_array,np.ndarray) or int_array.dtype != int:

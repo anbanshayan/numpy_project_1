@@ -1,5 +1,7 @@
 import numpy as np
-from operationclass import IntArray 
+from operationclass import IntArray
+from operationclass import min_productivity,max_productivity
+
 #first 'from nameoffile' then 'import nameofclass'
 
 def file_handling():
@@ -25,6 +27,9 @@ def main():
     first_branch.display()
     first_branch.salary()
     first_branch.show_data()
+
+    max_productivity(data_frame)
+    min_productivity(data_frame)
 
 main()
 
